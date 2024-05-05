@@ -14,6 +14,8 @@ class ServiceRequest(models.Model):
         ('Inspection', 'Inspection'),
         ('Booking', 'Booking')
     ]
+    requestdate_in_local=models.DateTimeField(null=True,blank=True)
+    requestdate_in_utc=models.DateTimeField(null=True,blank=True)
     customer = models.ForeignKey('customer.Customer', on_delete=models.CASCADE)
     type = models.CharField(max_length=30, choices=TYPE_CHOICES, default='New Connection')
     description = models.TextField()
