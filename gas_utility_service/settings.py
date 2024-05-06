@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'gas_utility_service.user_timezone_middleware.UserTimezoneMiddleware'
+    'gas_utility_service.middleware.AddTimeToDateTimeFieldsMiddleware',
 ]
 
 AUTH_USER_MODEL = 'customer.Customer'
@@ -128,7 +128,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_TZ = False
 

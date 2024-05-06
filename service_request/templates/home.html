@@ -12,7 +12,7 @@
             <th scope="col">Description</th>
             <th scope="col">Status</th>
             <th scope="col">Requested DateTime Local</th>
-            <th scope="col">Requested DateTime UTC</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -24,7 +24,6 @@
                 <td>{{ sr.description }}</td>
                 <td>{{ sr.status }}</td>
                 <td>{{ sr.requestdate_in_local }}</td>
-                <td>{{ sr.requestdate_in_utc }}</td>
                 
             </tr>
             {% endfor %}

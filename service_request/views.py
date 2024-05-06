@@ -12,12 +12,13 @@ def home(request):
 @login_required
 def service_request_create(request):
     if request.method == 'POST':
-        form = ServiceRequestForm(request.POST, request=request)  # Pass request object to the form
+        form = ServiceRequestForm(request.POST, request=request)  
         if form.is_valid():
             service_request = form.save(commit=False)
             service_request.customer = request.user
             service_request.save()
+            print("I am Here")
             return redirect('service_request:home')
     else:
-        form = ServiceRequestForm(request=request)  # Pass request object to the form
+        form = ServiceRequestForm(request=request)  
     return render(request, 'create.html', {'form': form})
